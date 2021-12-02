@@ -18,12 +18,43 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text(info),
           ),
-          body: RaisedButton(
-            child: Text('valider'),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              // RaisedButton(
+              //   onPressed: () {
+              //     debugPrint('----oh valider-----');
+              //   },
+              //   child: Text(
+              //     'click Button',
+              //   ),
+              //   color: Colors.amber,
+              // ),
+              FlatButton(
+                  onPressed: () {},
+                  child: Text(
+                    '-----  valider ok',
+                    style: TextStyle(fontSize: 20, backgroundColor: Colors.red),
+                  )),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.thumb_up,
+                  color: Colors.amber,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.thumb_down, color: Colors.green[500]),
+              ),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
             onPressed: () {
-              print('validation ok');
+              print('hello Oumar');
             },
-            color: Colors.red,
+            backgroundColor: Colors.red,
+            child: Icon(Icons.timer),
           ),
         ));
   }
