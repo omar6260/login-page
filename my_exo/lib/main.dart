@@ -1,92 +1,105 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: Portfolio(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  var info = "devboy";
-  var val1 = 0;
-  var val2 = 0;
-
-  Widget? get column => null;
-
-  void change1(int s) {
-    setState(() {
-      val1 = s;
-    });
-  }
-
-  void change2(int t) {
-    setState(() {
-      val2 = t;
-    });
-  }
-
-  Widget? radio() {
-    List<Widget> Button_radio = new List();
-    for (int i = 0; i < 4; i++)
-      Column column = Column(
-        children: [],
-      );
-    return column;
-  }
+class Portfolio extends StatelessWidget {
+  const Portfolio({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+    return Scaffold(
+      backgroundColor: Colors.grey[900],
+      appBar: AppBar(
+        title: Text('Portfolio'),
+        centerTitle: true,
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
+      ),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('../assets/omar-2.jpg'),
+                radius: 80.0,
+              ),
+            ),
+            Divider(
+              height: 90.0,
+              color: Colors.grey[800],
+            ),
+            Text(
+              'NAME',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Oumar Fall',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Text(
+              'MON NUMERO',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              '771508362',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Row(
+              children: <Widget>[
+                Icon(
+                  Icons.email,
+                  color: Colors.grey[400],
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  'oumar.fall2@uvs.edu.sn',
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 18.0,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text(info),
-          ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              // RaisedButton(
-              //   onPressed: () {
-              //     debugPrint('----oh valider-----');
-              //   },
-              //   child: Text(
-              //     'click Button',
-              //   ),
-              //   color: Colors.amber,
-              // ),
-              // FlatButton(
-              //     onPressed: () {},
-              //     child: Text(
-              //       'valider ok',
-              //       style: TextStyle(fontSize: 20, backgroundColor: Colors.red),
-              //     )),
-              // IconButton(
-              //   onPressed: () {},
-              //   icon: Icon(
-              //     Icons.thumb_up,
-              //     color: Colors.amber,
-              //   ),
-              // ),
-              // IconButton(
-              //   onPressed: () {},
-              //   icon: Icon(Icons.thumb_down, color: Colors.green[500]),
-              // ),
-              Text(
-                'hello oumar',
-                style: TextStyle(color: Colors.black, fontSize: 16.0),
-              )
-            ],
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              print('hello Oumar');
-            },
-            backgroundColor: Colors.red,
-            child: Icon(Icons.timer),
-          ),
-        ));
+      ),
+    );
   }
-
-  void setState(Null Function() param0) {}
 }
